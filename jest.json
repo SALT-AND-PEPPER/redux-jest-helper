@@ -1,0 +1,8 @@
+{
+  "moduleFileExtensions": ["ts", "js"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "testMatch": ["<rootDir>/src/**/*.test.(ts|tsx|js)"],
+  "mapCoverage": true
+}
