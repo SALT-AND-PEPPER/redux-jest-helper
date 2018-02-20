@@ -99,6 +99,8 @@ The following example will test, if the given methods are called on the given ac
 payload.
 
 ```typescript
+import { reducerTestHelper } from 'redux-jest-helper'
+
 describe('reducerTestHelper', () => {
   reducerTestHelper(new TestReducerFactory(), initialState, [
     { actionType: 'INCREMENT', actionValue: { amount: 1 }, methods: 'onIncrement' },
