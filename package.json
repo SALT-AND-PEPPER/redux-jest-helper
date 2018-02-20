@@ -11,17 +11,18 @@
     "build": "tsc"
   },
   "peerDependencies": {
-    "@types/jest": "*",
     "redux": "*",
     "jest": "*"
   },
   "devDependencies": {
     "@types/deep-freeze": "^0.1.1",
     "@types/jest": "^22.1.1",
-    "deep-freeze": "^0.0.1",
     "jest": "^22.1.4",
     "redux": "^3.7.2",
     "ts-jest": "^22.0.2",
     "typescript": "^2.7.1"
+  },
+  "dependencies": {
+    "deep-freeze": "^0.0.1"
   }
 }
