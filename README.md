@@ -2,6 +2,18 @@
 
 Provides an easy way to create and test Redux Reducers and Middlewares.
 
+## Installation
+
+Using yarn you only need to execute 
+```
+yarn add redux-jest-helper
+```
+
+or if you are using npm, execute
+```
+npm install redux-jest-helper --save
+```
+
 ## Usage
 
 ### Middleware
