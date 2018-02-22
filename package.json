@@ -1,11 +1,15 @@
 {
   "name": "redux-jest-helper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Provides easily testable classes that genrate redux-middlewares or -reducers",
   "author": "patsimm",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SALT-AND-PEPPER/redux-jest-helper"
+  },
   "scripts": {
     "test": "jest --config=jest.json",
     "build": "tsc"
@@ -24,5 +28,17 @@
   },
   "dependencies": {
     "deep-freeze": "^0.0.1"
-  }
+  },
+  "contributors": [
+    { 
+      "name" : "David Hahn", 
+      "email" : "D.Hahn@salt-and-pepper.eu", 
+      "url" : "https://github.com/davidka"
+    },
+    { 
+      "name" : "Patrick Simmelbaiuer", 
+      "email" : "p.simmelbauer@salt-and-pepper.eu", 
+      "url" : "https://github.com/patsimm"
+    }
+  ]
 }
