@@ -1,7 +1,7 @@
 {
   "name": "redux-jest-helper",
-  "version": "0.0.3",
-  "description": "Provides easily testable classes that genrate redux-middlewares or -reducers",
+  "version": "1.0.0",
+  "description": "Provides easily testable classes that generate redux-middlewares or -reducers",
   "author": "patsimm",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,14 +15,14 @@
     "build": "tsc"
   },
   "peerDependencies": {
-    "redux": ">=3.0.0",
+    "redux": ">=4.0.0",
     "jest": ">=20.0.0"
   },
   "devDependencies": {
     "@types/deep-freeze": "^0.1.1",
     "@types/jest": "^22.1.1",
     "jest": "^22.1.4",
-    "redux": "^3.7.2",
+    "redux": "^4.0.0",
     "ts-jest": "^22.0.2",
     "typescript": "^2.7.1"
   },

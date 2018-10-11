@@ -1,6 +1,6 @@
 import * as deepFreeze from 'deep-freeze'
-import { Action } from 'redux'
 import { ReducerFactory } from './reducer-factory'
+import { AnyAction } from 'redux';
 
 export interface ActionTypeToMethod {
   actionType: string
@@ -16,7 +16,7 @@ export const reducerTestHelper = <T>(
   describe('toReducer', () => {
     let methods: string[] = []
     const reducer = cut.toReducer()
-    let action: Action
+    let action: AnyAction
 
     beforeEach(() => {
       deepFreeze(initialState)

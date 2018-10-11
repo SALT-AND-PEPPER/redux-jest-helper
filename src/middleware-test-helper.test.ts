@@ -1,5 +1,5 @@
 import { MiddlewareFactory } from './middleware-factory'
-import { MiddlewareAPI, Action } from 'redux'
+import { MiddlewareAPI, Action, Dispatch } from 'redux'
 import { middlewareTestHelper } from './middleware-test-helper'
 
 interface TestState {
@@ -30,7 +30,7 @@ class TestMiddlewareFactory extends MiddlewareFactory<TestState> {
 
   onAfterDecrement = (action: DecrementAction) => {}
 
-  onBeforeAction = (api: MiddlewareAPI<TestState>, action: Action) => {
+  onBeforeAction = (api: MiddlewareAPI<Dispatch>, action: Action) => {
     switch (action.type) {
       case ActionType.INCREMENT:
         this.onIncrement(action as IncrementAction)
@@ -41,7 +41,7 @@ class TestMiddlewareFactory extends MiddlewareFactory<TestState> {
     }
   }
 
-  onAfterAction = (api: MiddlewareAPI<TestState>, action: Action, prevState: TestState) => {
+  onAfterAction = (api: MiddlewareAPI<Dispatch>, action: Action, prevState: TestState) => {
     switch (action.type) {
       case ActionType.INCREMENT:
         this.onAfterIncrement(action as IncrementAction)

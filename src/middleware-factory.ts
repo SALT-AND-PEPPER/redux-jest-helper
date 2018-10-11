@@ -1,21 +1,17 @@
-import { Action, Dispatch, Middleware, MiddlewareAPI } from 'redux'
+import { Action, Dispatch, MiddlewareAPI, Middleware, AnyAction } from 'redux'
 
-export interface ExtendedMiddleware<T> extends Middleware {
-  <S extends T>(api: MiddlewareAPI<S>): (next: Dispatch<S>) => Dispatch<S>
-}
-
-export abstract class MiddlewareFactory<S> {
+export abstract class MiddlewareFactory<S, D extends Dispatch = Dispatch, A extends Action = AnyAction> {
   [key: string]: any
-  onBeforeAction?: (api: MiddlewareAPI<S>, action: Action) => void
-  onAfterAction?: (api: MiddlewareAPI<S>, action: Action, prevState: S) => void
-  onCreateMiddleware?: (api: MiddlewareAPI<S>) => void
+  onBeforeAction?: (api: MiddlewareAPI<D, S>, action: A) => void
+  onAfterAction?: (api: MiddlewareAPI<D, S>, action: A, prevState: S) => void
+  onCreateMiddleware?: (api: MiddlewareAPI<D, S>) => void
 
-  toMiddleware = (): ExtendedMiddleware<S> => {
-    return (api: MiddlewareAPI<S>) => {
+  toMiddleware = (): Middleware<{}, S, D> => {
+    return (api: MiddlewareAPI<D, S>) => {
       if (this.onCreateMiddleware) {
         this.onCreateMiddleware(api)
       }
-      return (next: Dispatch<S>) => (action: Action): any => {
+      return next => action => {
         if (this.onBeforeAction) {
           this.onBeforeAction(api, action)
         }

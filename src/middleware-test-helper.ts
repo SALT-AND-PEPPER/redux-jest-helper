@@ -1,4 +1,4 @@
-import { Action, Dispatch, Store } from 'redux'
+import { Dispatch, Store, AnyAction } from 'redux'
 
 import { MiddlewareFactory } from './middleware-factory'
 
@@ -22,8 +22,8 @@ export const middlewareTestHelper = <T>(
       replaceReducer: jest.fn(),
       subscribe: jest.fn()
     }
-    let next: Dispatch<any>
-    let action: Action
+    let next: Dispatch
+    let action: AnyAction
 
     beforeEach(() => {
       for (const type of actionTypes) {
